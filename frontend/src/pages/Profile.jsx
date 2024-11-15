@@ -115,6 +115,9 @@ const Profile = () => {
 
     useEffect(() => {
         fetchBlogs();
+        if(localStorage.getItem("token") === null){
+            navigate("/")
+        }
     }, [token])
     return (
         <div className="w-[90%] mx-auto flex flex-col gap-[20px]">
